@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: usuarioapi-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bd_usuarioapi
+      POSTGRES_USER: admin_sistema123
+      POSTGRES_PASSWORD: password_sistema123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
